@@ -12,6 +12,7 @@
         android:id="@+id/txtParah"
         android:editable="false"
         android:clickable="false"
+        android:focusable="false"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -20,24 +21,23 @@
         android:text="Enter parah number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Deprecated" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtAyat"
         android:editable="false"
-        android:clickable="false"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:clickable="false"
         android:ems="10"
+        android:focusable="false"
         android:inputType="textPersonName"
         android:text="Enter ayat number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parahNum"
-        tools:ignore="Deprecated" />
+        app:layout_constraintTop_toBottomOf="@+id/parahNum" />
 
     <EditText
         android:id="@+id/parahNum"
@@ -80,17 +80,32 @@
         app:icon="@drawable/arrow_back"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="@+id/button3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="48dp"
         app:icon="@drawable/arrow_forward"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showAyat" />
+
+    <TextView
+        android:id="@+id/showAyat"
+        android:editable="false"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
 </androidx.constraintlayout.widget.ConstraintLayout>
