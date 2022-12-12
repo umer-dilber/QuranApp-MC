@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/txtParah"
+        android:id="@+id/txtSurah"
         android:editable="false"
         android:clickable="false"
         android:focusable="false"
@@ -18,7 +18,7 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter parah number"
+        android:text="Enter surah number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,10 +37,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parahNum" />
+        app:layout_constraintTop_toBottomOf="@+id/surahNum" />
 
     <EditText
-        android:id="@+id/parahNum"
+        android:id="@+id/surahNum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtParah" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSurah" />
 
     <EditText
         android:id="@+id/ayatNum"
@@ -89,8 +89,8 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="44dp"
         app:icon="@drawable/arrow_forward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showAyat" />
@@ -102,10 +102,11 @@
         android:focusable="false"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginTop="64dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch"
+        app:layout_constraintBottom_toTopOf="@id/button3"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
