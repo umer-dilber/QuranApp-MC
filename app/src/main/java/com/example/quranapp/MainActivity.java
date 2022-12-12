@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText surah, ayat, ayatPrompt;
     TextView showAyat;
-    Button btnSearch;
+    Button btnSearch, btnPrev, btnNext;
     QuranArabicText txt = new QuranArabicText();
     QDH index = new QDH();
     @Override
@@ -44,5 +44,29 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        btnPrev = findViewById(R.id.btnPrevious);
+        btnNext = findViewById(R.id.btnNext);
+        btnPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int ayatnumber = Integer.parseInt(ayat.getText().toString());
+                String ayNum = Integer.toString(ayatnumber-1);
+                ayat.setText(ayNum);
+                btnSearch.performClick();
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int ayatnumber = Integer.parseInt(ayat.getText().toString());
+                String ayNum = Integer.toString(ayatnumber+1);
+                ayat.setText(ayNum);
+                btnSearch.performClick();
+            }
+        });
+    }
+    public String ayat(int surah, int ayat){
+        return txt.QuranArabicText[index.getSurahStart(surah - 1) + (ayat - 1)];
     }
 }
