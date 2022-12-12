@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!((surah.getText().toString().equalsIgnoreCase("")) && (ayat.getText().toString().equalsIgnoreCase("")))) {
+                if (!((surah.getText().toString().equalsIgnoreCase("")) || (ayat.getText().toString().equalsIgnoreCase("")))) {
                     Integer surahNum = Integer.parseInt(surah.getText().toString());
                     Integer ayatNum = Integer.parseInt(ayat.getText().toString());
                     if (!(surahNum > 0 && surahNum < 115)) {
