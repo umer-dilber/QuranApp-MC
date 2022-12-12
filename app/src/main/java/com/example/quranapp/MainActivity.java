@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,18 +30,22 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer surahNum = Integer.parseInt(surah.getText().toString());
-                Integer ayatNum = Integer.parseInt(ayat.getText().toString());
-                if (!(surahNum>0 && surahNum<115)){
-                    Toast.makeText(getApplicationContext(),"Invalid Surah Number",Toast.LENGTH_LONG).show();
+                if (!((surah.getText().toString().equalsIgnoreCase("")) && (ayat.getText().toString().equalsIgnoreCase("")))) {
+                    Integer surahNum = Integer.parseInt(surah.getText().toString());
+                    Integer ayatNum = Integer.parseInt(ayat.getText().toString());
+                    if (!(surahNum > 0 && surahNum < 115)) {
+                        Toast.makeText(getApplicationContext(), "Invalid Surah Number", Toast.LENGTH_LONG).show();
+                    } else {
+                        if (!((ayatNum > 0) && (ayatNum <= index.getSurahVerses(surahNum - 1)))) {
+                            Toast.makeText(getApplicationContext(), "Invalid Ayat Number", Toast.LENGTH_LONG).show();
+                        } else {
+                            showAyat.setMovementMethod(new ScrollingMovementMethod());
+                            showAyat.setText(txt.QuranArabicText[index.getSurahStart(surahNum - 1) + (ayatNum - 1)]);
+                        }
+                    }
                 }
                 else{
-                    if (!((ayatNum>0) && (ayatNum<=index.getSurahVerses(surahNum-1)))){
-                        Toast.makeText(getApplicationContext(),"Invalid Ayat Number",Toast.LENGTH_LONG).show();
-                    }
-                    else {
-                        showAyat.setText(txt.QuranArabicText[index.getSurahStart(surahNum - 1) + (ayatNum - 1)]);
-                    }
+                    Toast.makeText(getApplicationContext(), "Fields cannot be empty", Toast.LENGTH_LONG).show();
                 }
             }
         });

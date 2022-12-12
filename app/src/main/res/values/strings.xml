@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">QuranApp</string>
+    <string name="search">Search</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="enter_surah">Enter surah number</string>
+    <string name="enter_ayat">Enter ayat number</string>
 </resources>
