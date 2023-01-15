@@ -2,6 +2,8 @@ package com.example.quranapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText surah, ayat, ayatPrompt;
     TextView showAyat;
-    Button btnSearch, btnPrev, btnNext;
+    Button btnSearch, btnPrev, btnNext, btnBrowser;
     QuranArabicText txt = new QuranArabicText();
     QDH index = new QDH();
     @Override
@@ -27,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         ayat = findViewById(R.id.ayatNum);
         showAyat = findViewById(R.id.showAyat);
         btnSearch = findViewById(R.id.btnSearch);
+        btnBrowser = findViewById(R.id.btnBrowser);
+        btnBrowser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://github.com/umer-dilber/QuranApp-MC";
+                Intent moveToCode = new Intent(Intent.ACTION_VIEW);
+                moveToCode.setData(Uri.parse(url));
+                startActivity(moveToCode);
+            }
+        });
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
